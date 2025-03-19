@@ -8,9 +8,9 @@ head(y) # we can see the first rows of our data frame
 # or from an excel file:
 # we need a specific package in this case, and we need to install it:
 # install.packages("xlsx") # the line is commented because you just need to run it once
-library(xlsx)
+library(readxl)
 # read in the worksheet named mysheet
-mydata <- read.xlsx("data/database_esercizio.xls", sheetName = "captures")
+mydata <- read_excel("data/database_esercizio.xls", sheet = "captures")
 class(mydata)
 head(mydata)
 
@@ -23,6 +23,7 @@ y["weight_g"]
 y[,10] # the weight of the animals is stored in the 10th column
 # Let's ask R what kind of variable we are dealing with, using the 'class' function again
 class(y$weight_g)
+class(y["weight_g"])
 
 w <- y$weight_g
 w
