@@ -55,9 +55,10 @@ stripchart(y$weight_g, xlab="Animal weigth (g)", method="stack")
 
 # boxplot
 boxplot(y$weight_g, ylab="Animal weigth (g)")
+boxplot(y$weight_g, ylab="Animal weigth (g)", horizontal=T)
 boxplot(y$weight_g ~ y$sex + y$age, ylab="Animal weigth (g)")
 # exercise (by your own): do the same with the foot lenght
-boxplot(y$footlength_mm, ylab="Foot length (mm)")
+boxplot(y$footlength_mm, ylab="Foot length (mm)", ylim=c(15,21))
 
 # RIPRENDERE DA QUI IL 5 APRILE 
 ## ---- Central tendency measures ----
@@ -69,6 +70,7 @@ mean(weight)
 mean(y$weight_g)
 # median
 median(weight)
+hist(weight,prob=F)
 hist(weight,prob=T,ylim=c(0,0.05)) # prob=T for relative frequencies (density)
 lines(density(rnorm(1000000,mean(weight),sd(weight))),col="red")
 segments(mean(weight),0,mean(weight),0.047,col="blue")
@@ -98,6 +100,7 @@ median(weight)
 boxplot(weight, range=0)
 boxplot(na.omit(y$footlength_mm))
 boxplot(na.omit(y$footlength_mm), range=0)
+#lines(mean(na.omit(y$footlength_mm))
 
 # summary
 summary(weight)
