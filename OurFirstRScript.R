@@ -39,15 +39,15 @@ class(mydata$weight_g) # why?
 # histogram
 # the function to plot an histogram is 'hist'
 # let's see how it works
-??histogram
-?hist # this is the simplest way to get help in R! just a question mark!
+#??histogram
+#?hist # this is the simplest way to get help in R! just a question mark!
 hist(y$weight_g, main="", xlab="Animal weight (g)") # with default break
 hist(y$weight_g, breaks=30, main="", xlab="Animal weigth (g)") # we specified a single number giving
 # the number of cells for the histogram
 
 # dotplots (or stripcharts)
 # op <- par(mfrow=c(1,3))
-?stripchart
+#?stripchart
 stripchart(y$weight_g, xlab="Animal weigth (g)")
 stripchart(y$weight_g, xlab="Animal weigth (g)", method="jitter")
 stripchart(y$weight_g, xlab="Animal weigth (g)", method="stack")
@@ -96,7 +96,7 @@ range(weight)
 ## quantile
 quantile(weight) # in R, quartiles are the default for the quantile function
 median(weight)
-?boxplot # check the range argument and its default value
+#?boxplot # check the range argument and its default value
 boxplot(weight, range=0)
 boxplot(na.omit(y$footlength_mm))
 boxplot(na.omit(y$footlength_mm), range=0)
@@ -185,15 +185,12 @@ y[1:10,] # first ten rows
 y[5:10,] # from 5th to 10th row
 y["29",] # by row name, useful if we removed some rows from the dataset
 y[c("29","45"),] # by row name, more than a row
-
 y[,1] # one column (the first one)
 y[,1:10] # first ten columns
 y[,5:10] # from 5th to 10th column
 y[,"chip"] # by column name
 y[,c("chip","trap_id")] # by column name, more than a column
-
 y[1:5,c("chip","trap_id")]
-
 # selecting subsets of data, according to their values
 library(dplyr)
 library(tidyverse)
@@ -211,11 +208,19 @@ select(y, chip, trap_id)
 y %>% 
   select(chip, trap_id) %>% 
   filter(trap_id > 65) %>% 
-  arrange(trap_id)
-
+  arrange(trap_id) -> cc
+cc
 # summarizing data within groups
 names(y)
 y$age
 y %>% group_by(age) %>% summarise(mean.w = mean(na.omit(weight_g)))
 y$sex
-y %>% group_by(age, sex) %>% summarise(mean.w = mean(na.omit(weight_g)))
+y %>% group_by(age, sex) %>% summarise(mean.w = mean(na.omit(weight_g))) #na.omit(...) restituisce le colonne non-NA
+
+y %>%
+  filter(age =="A") -> adulti
+mean(na.omit(adulti$weight_g))
+
+y %>%
+  filter(age =="G") -> giovani
+mean(na.omit(giovani$weight_g))
