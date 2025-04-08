@@ -198,7 +198,7 @@ What is the probability of capturing a female, given that it is an adult? (condi
 
 ```{r}
 y <- read.csv("data/captures.csv",sep=";") 
-y <- na.omit(y[,c("age", "sex")])
+y <- na.omit(y[,c("age", "sex")]); y
 ```
 
 The marginal probability of capturing an adult snow vole is:
