@@ -7,4 +7,4 @@ captures <- read_delim("data/captures.csv",
                                         chip = col_character(), sex = col_factor(levels = c("F", 
                                                                                             "M")), DOY = col_integer()),
                        trim_ws = TRUE)
-View(captures)  
+View(captures)
