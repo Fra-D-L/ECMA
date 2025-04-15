@@ -26,7 +26,7 @@ We will store the results in an object called *cars.lm*.
 cars.lm <- lm(dist ~ speed, data = cars)
 names(cars.lm)
 coef(cars.lm)
-
+cars.lm
 ```
 
 We visually inspect the data:
@@ -34,7 +34,7 @@ We visually inspect the data:
 ```{r regressionplot}
 
 plot(dist ~ speed, data = cars, pch = 16)
-abline(coef(cars.lm), col="red", lwd=2)
+abline(cars.lm, col="red", lwd=2)
 summary(cars.lm)
 
 ```
@@ -92,6 +92,8 @@ The residuals for the model may be obtained with the *residuals* function.
 ```{r residuals}
 
 residuals(cars.lm)
+
+
 # Residual standard error
 carsumry <- summary(cars.lm)
 carsumry$sigma
