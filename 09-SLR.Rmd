@@ -217,3 +217,13 @@ pt(t, 13, lower.tail = TRUE) # FIND THE LEFT TAIL FOR THIS VALUE OF t AND 15-2 d
 
 ```
 
+
+
+
+
+
+
+
+
+
+

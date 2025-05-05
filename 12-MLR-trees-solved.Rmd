@@ -171,5 +171,8 @@ plot_model(mod.int, type = "pred", terms = c("Girth", "Height [60,80]"))
 plot_model(mod.int, type = "pred", terms = c("Height", "Girth"))
 ```
 
-
+```{r}
+plot_model(mod.int, type = "est", terms = c("Height", "Grith"))
+plot_model(mod.int, type = "est")
+```
 
