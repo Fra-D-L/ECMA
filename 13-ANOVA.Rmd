@@ -96,8 +96,7 @@ Are the results consistent?
 # Regression with just one qualitative variables (more levels)
 
 (Example from Verzani - Simple R)
-A school is trying to grade 24 different scholarship applications. The job is carried out by 3 graders. The scholarship committee would like to ensure that each grader is using the same
-grading scale, as otherwise the students aren't being treated equally. One approach to checking if the graders are using the same scale is to randomly assign each grader 8 exams and have them grade. Then compare the grades for the 3 graders knowing that the differences should be due to chance errors if the graders all grade equally.
+A school is trying to grade 24 different scholarship applications. The job is carried out by 3 graders. The scholarship committee would like to ensure that each grader is using the same grading scale, as otherwise the students aren't being treated equally. One approach to checking if the graders are using the same scale is to randomly assign each grader 8 exams and have them grade. Then compare the grades for the 3 graders knowing that the differences should be due to chance errors if the graders all grade equally.
 
 ```{r graders}
 scores.graderA = c(4,3,4,5,2,3,4,5)
