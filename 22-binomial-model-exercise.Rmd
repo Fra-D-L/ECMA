@@ -136,7 +136,7 @@ Now, try to reduce the number of variables in the model - different models can b
 
 fm1.noexp <- glm(CattSiNo ~ Incl +
              Alt,
-             #copveg,
+             #copveg +
              # NSpecie +
              # media.rocce +
              #mediana.rocce,
@@ -163,10 +163,13 @@ fm2 <- glm(CattSiNo ~ #Incl +
              # mediana.rocce +
              # sd.rocce +
              # Esp.tr,
-           family=binomial, data=dati.mod.new)
+           family=binomial, #fmily=poisson per conteggi
+           data=dati.mod.new)
 #, offset=Noccasioni)
 summary(fm2)
 ```
+quando la differenza tra AIC è > 2 si prende quello con AIC minore (TENENDO CONTO DEL SEGNO)
+
 
 ### Plotting the results
 
@@ -228,8 +231,6 @@ plot(arrange(tab, Alt))
 library(sjPlot)
 plot_model(fm2, type = "eff", terms = c("Alt"))
 ```
-
-
 ```{r}
 plot_model(fm2)
 ```
@@ -281,4 +282,3 @@ fm2 <- glm(CattSiNo ~ Alt + Alt:media.rocce,
 #, offset=Noccasioni)
 summary(fm2)
 ```
-

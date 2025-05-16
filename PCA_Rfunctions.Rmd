@@ -21,7 +21,6 @@ plot(res.prcomp)
 biplot(res.prcomp)
 res.prcomp$rotation
 biplot(res.prcomp, choices=3:4)
-
 ```
 
 The output contains the following values:
@@ -175,7 +174,6 @@ print(p)
 p + scale_color_manual(values=c("#999999", "#E69F00", "#56B4E9"))+
  scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9"))+
  theme_minimal()
-
 ```
 
 

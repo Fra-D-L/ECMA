@@ -68,7 +68,7 @@ Now, we can compute a correlation matrix:
 cor.matrix <- cor(pred)
 cor.matrix
 ```
-
+0.7 è un valore fortemente correlante
 And we can visualize it:
 
 ```{r}
@@ -93,6 +93,7 @@ We set a threshold to identify relevant correlations:
 ```{r}
 p.mat <- (abs(cor.matrix) > 0.7)
 p.mat
+colSums(p.mat)-1 #quante correlazioni sopra 0.7 o sotto -0.7
 ```
 
 
@@ -136,6 +137,7 @@ Consider a dataset from air pollution studies. How is sulphur dioxide concentrat
 
 ```{r}
 pollution <- read.table("data/sulphur.dioxide.txt", header=TRUE)
+summary(pollution)
 View(pollution)
 ```
 
@@ -168,4 +170,3 @@ vif(model1)
 model1 <- lm(Pollution ~ Temp + Industry + Wind + Rain + Wet.days, data = pollution)
 summary(model1)
 ```
-
