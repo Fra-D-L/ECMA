@@ -39,7 +39,6 @@ summary(cars.lm)
 
 ```
 
-
 ## Exercises
 
 1) What is the meaning of 60 = b0+b1(8)?   
@@ -54,7 +53,6 @@ summary(cars.lm)
 
 -17.58 + 3.93 * (8) # point estimate
 cars[5,] # real data
-
 ```
 
 # Fitted and predicted values

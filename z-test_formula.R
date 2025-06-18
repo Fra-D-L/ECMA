@@ -4,9 +4,9 @@ z.test <- function(x, sigma, mu = 0) {
   Z <- (xbar - mu) / (sigma / sqrt(n))
   p_val <- 2 * (1 - pnorm(abs(Z)))
   if (n < 30) {
-    cat("Warning!\nA sample size of ", n, " is too small to perform an accurate Z test (n is < 30)\n")
+    cat("\tWarning!\nA sample size of ", n, " is too small to perform an accurate Z test (n should be ≥ 30)\n\n")
   }
-  cat("Z-test\nZ = ", Z, "\tp-value =", p_val, "\n")
+  cat("\tZ-test\nZ = ", Z, "\tp-value =", p_val, "\n")
 }
 
 z.test(
