@@ -164,7 +164,7 @@ The use of an adjusted R2 is an attempt to take account of the phenomenon of the
 
 # The heart rate example
 
-The maximum heart rate of a person if often said to be related to age by the equation: Max = 220 - 1*Age. The expected value for a regression coefficient of age hearth rate (max) and age is 1.
+The maximum heart rate of a person if often said to be related to age by the equation: Max = 220 - 1*Age. The expected value for a regression coefficient of age hearth rate (max) and age is -1.
 Let's check if the data support this statement. (Try to formulate the null and alternative hypothesis first!)
 
 ```{r heartratedata}
@@ -174,7 +174,7 @@ y = c(202, 186, 187, 180, 156, 169, 174, 172, 153, 199, 193, 174, 198, 183, 178)
 lm(y ~ x) # the basic values of the regression analysis
 lm.result = lm(y ~ x)
 summary(lm.result)
-plot(x,y, xlim=c(0,80), ylim=c(150,240)) # make a plot
+plot(x,y, xlim=c(0,80), ylim=c(150,240), xlab="Age", ylab="Heart Rate") # make a plot
 abline(coef(lm.result)) #lm(y ~ x)) # plot the regression line
 
 # to see only some parts of the result
