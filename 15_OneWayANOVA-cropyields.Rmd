@@ -95,7 +95,7 @@ summary(mod)
 
 ```{r}
 dati.relevel <- dati.new
-dati.relevel$soil.type <- relevel(dati.relevel$soil.type, ref="sand")
+dati.relevel$soil.type <- relevel(as.factor(dati.relevel$soil.type), ref="sand")
 mod.relevel <- lm(yields ~ soil.type, data=dati.relevel)
 summary(mod.relevel)
 ```
